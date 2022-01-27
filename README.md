@@ -50,7 +50,7 @@ python state_transition_rollout.py
 Then, you should run generation code... (TODO:DSSHIM)
 
 
-Then you can get the all_state_1step_random_action_dataset_naive.hdf5 in data/trajwise/cheetah-run-mixed_first_500k/all_state_1step_random_action.
+Then you can get the all_state_1step_random_action_dataset_naive.hdf5 in data/trajwise/cheetah-run-mixed_first_500k/all_state_1step_random_action folder.
 
 For training offline RL, run the below python code.
 ### Train Offline RL
