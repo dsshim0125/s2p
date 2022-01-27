@@ -14,7 +14,7 @@ Our experiments have been done with PyTorch 1.10.1, CUDA 11.4, Python 3.8.5 and 
 ### Simple Generation
 Due to the meomory limit in the submission of supplementary materials, we cannot provide pre-trained weights of our S2P architecture. Instead, we provide the pre-trained weights of S2P_light which is lighter version of S2P in two different tasks, cheetah and walker.
 
-After camera-ready submission, we will publicly open the source code and the pre-trained weights of our full S2P in 6 different tasks we've shown in the paper.
+After the camera-ready submission, we will publicly open the source code and the pre-trained weights of our full S2P in 6 different tasks we've shown in the paper.
 ```shell
 python evaluate.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p_light --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
