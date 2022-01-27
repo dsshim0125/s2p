@@ -29,3 +29,41 @@ python train.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p
 1. https://github.com/NVlabs/SPADE
 2. https://github.com/yenchenlin/nerf-pytorch
 3. https://github.com/huangzh13/StyleGAN.pytorch
+
+
+### Offline RL setup
+```shell
+pip install mujoco-py<2.2,>=2.1
+pip install git+https://github.com/deepmind/dm_control
+```
+
+
+
+Due to the memory limit in the submission of supplementary materials, we cannot provide full offline dataset used for the paper. Instead, we provide tiny dataset of the cheetah-run-mixed environment with the state transition rollout by the random policy in /rl_data in the attached link. Download the cheetah-run-mixed_first_500k folder paste it in to data/trajwise folder. If you want to follow the generating process of the state transition rollout by the random policy, you should run the below code after download the cheetah-run-mixed_first_500k folder.
+
+### state transition data rollout
+```shell
+python state_transition_rollout.py
+```
+
+Then you can get the all_state_1step_random_action_dataset_naive.hdf5, which is the same as downloaded data from the link.
+
+For training offline RL, run the below python code.
+
+### Train Offline RL
+```shell
+bash run_iql_image.sh
+bash run_cql_image.sh
+```
+
+
+
+
+
+
+
+
+
+
+
+
