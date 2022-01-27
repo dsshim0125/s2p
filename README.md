@@ -38,7 +38,7 @@ pip install git+https://github.com/deepmind/dm_control
 ```
 We generated the DMControl environment dataset by training the state-based SAC, following the implementation of the https://github.com/rail-berkeley/rlkit.
 
-But, due to the memory limit in the submission of supplementary materials, we cannot provide full offline dataset used for the paper. Instead, we provide tiny dataset of the cheetah-run-mixed environment with the state transition rollout by the random policy in https://drive.google.com/drive/folders/15WzMg_OAN9PBHFNw8iTRcBvnjsqK9TsZ?usp=sharing. Download the cheetah-run-mixed_first_500k folder and paste it in to data/trajwise folder of this repository. 
+But, due to the memory limit in the submission of supplementary materials, we cannot provide full offline dataset used for the paper. Instead, we provide tiny dataset of the cheetah-run-mixed environment with the state transition rollout by the random policy in https://drive.google.com/drive/folders/15WzMg_OAN9PBHFNw8iTRcBvnjsqK9TsZ?usp=sharing. Download the cheetah-run-mixed_first_500k folder and paste it in to data/trajwise folder of this repository.  
 
 
 
