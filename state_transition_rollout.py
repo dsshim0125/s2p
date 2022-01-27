@@ -229,7 +229,7 @@ def generate_rollout_by_dynamics_reward_ftn():
                 dataset['slac_observation_indices'] = np.concatenate(slac_observation_indices_list, axis =0) #[bs(all), num_seq+1]
 
         
-        h5f_w = h5py.File(load_dir+'/'+rollout+'/all_state_1step_random_action_dataset_naive.hdf5', 'w')
+        h5f_w = h5py.File(load_dir+'/'+rollout+'/all_state_1step_random_action_dataset_augment.hdf5', 'w')
         import time
         start = time.time()
         for k,v in dataset.items():

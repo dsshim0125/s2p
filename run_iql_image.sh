@@ -13,7 +13,7 @@ python examples/iql/mujoco_finetune.py \
     --data_mix_num_gen 1000 \
     --uncertainty_penalty_lambda 2 \
     --uncertainty_type 'aleatoric' \
-    --use_tiny_data \
+    # --use_tiny_data \
     
     
     

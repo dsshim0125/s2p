@@ -543,9 +543,9 @@ def experiment(variant):
                                 h5f_r_gen_name = path_prefix+'/all_state_1step_random_action' +'/all_state_1step_random_action_dataset-rl.hdf5'                            
                         else:
                             if use_tiny_data:
-                                h5f_r_gen_name = path_prefix+'/all_state_1step_random_action' +'/all_state_1step_random_action_dataset_naive_tiny.hdf5'                                    
+                                h5f_r_gen_name = path_prefix+'/all_state_1step_random_action' +'/all_state_1step_random_action_dataset_augment_tiny.hdf5'                                    
                             else:
-                                h5f_r_gen_name = path_prefix+'/all_state_1step_random_action' +'/all_state_1step_random_action_dataset_naive.hdf5'                                    
+                                h5f_r_gen_name = path_prefix+'/all_state_1step_random_action' +'/all_state_1step_random_action_dataset_augment.hdf5'                                    
                     
 
                     data_mix_num_real = variant.get('data_mix_num_real')
