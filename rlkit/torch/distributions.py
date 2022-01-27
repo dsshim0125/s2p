@@ -180,7 +180,7 @@ class MultivariateDiagonalNormal(TorchDistributionWrapper):
 def _kl_mv_diag_normal_mv_diag_normal(p, q):
     return kl_divergence(p.distribution, q.distribution)
 
-# Independent RV KL handling - https://github.com/pytorch/pytorch/issues/13545
+
 
 @torch.distributions.kl.register_kl(TorchIndependent, TorchIndependent)
 def _kl_independent_independent(p, q):
@@ -337,25 +337,7 @@ class TanhNormal(Distribution):
             return torch.tanh(z)
 
     def _log_prob_from_pre_tanh(self, pre_tanh_value):
-        """
-        Adapted from
-        https://github.com/tensorflow/probability/blob/master/tensorflow_probability/python/bijectors/tanh.py#L73
-
-        This formula is mathematically equivalent to log(1 - tanh(x)^2).
-
-        Derivation:
-
-        log(1 - tanh(x)^2)
-         = log(sech(x)^2)
-         = 2 * log(sech(x))
-         = 2 * log(2e^-x / (e^-2x + 1))
-         = 2 * (log(2) - x - log(e^-2x + 1))
-         = 2 * (log(2) - x - softplus(-2x))
-
-        :param value: some value, x
-        :param pre_tanh_value: arctanh(x)
-        :return:
-        """
+        
         log_prob = self.normal.log_prob(pre_tanh_value)
         correction = - 2. * (
             ptu.from_numpy(np.log([2.]))
@@ -386,7 +368,6 @@ class TanhNormal(Distribution):
         """
         Gradients will and should *not* pass through this operation.
 
-        See https://github.com/pytorch/pytorch/issues/4620 for discussion.
         """
         value, pre_tanh_value = self.rsample_with_pretanh()
         if return_pretanh_value:

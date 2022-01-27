@@ -289,8 +289,6 @@ def batch(iterable, n=1):
     Split an interable into batches of size `n`. If `n` does not evenly divide
     `iterable`, the last slice will be smaller.
 
-    https://stackoverflow.com/questions/8290397/how-to-split-an-iterable-in-constant-size-chunks
-
     Usage:
     ```
         for i in batch(range(0,10), 3):
@@ -311,7 +309,7 @@ def takespread(sequence, num):
     """
     Get `num` elements from the sequence that are as spread out as possible.
 
-    https://stackoverflow.com/questions/9873626/choose-m-evenly-spaced-elements-from-a-sequence-of-length-n
+    
     :param sequence:
     :param num:
     :return:

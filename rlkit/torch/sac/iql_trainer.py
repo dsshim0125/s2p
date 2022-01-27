@@ -1,6 +1,4 @@
-"""Torch implementation of Implicit Q-Learning (IQL)
-https://github.com/ikostrikov/implicit_q_learning
-"""
+
 
 import pickle
 from collections import OrderedDict

@@ -43,10 +43,7 @@ def maximum_2d(t1, t2):
 
 
 def kronecker_product(t1, t2):
-    """
-    Computes the Kronecker product between two tensors
-    See https://en.wikipedia.org/wiki/Kronecker_product
-    """
+    
     t1_height, t1_width = t1.size()
     t2_height, t2_width = t2.size()
     out_height = t1_height * t2_height

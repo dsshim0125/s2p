@@ -272,20 +272,7 @@ class SplitIntoManyHeads(nn.Module):
 
 
 class ParallelMlp(nn.Module):
-    """
-    Efficient implementation of multiple MLPs with identical architectures.
-
-           .-> mlp 0
-          /
-    input ---> mlp 1
-          \
-           '-> mlp 2
-
-    See https://discuss.pytorch.org/t/parallel-execution-of-modules-in-nn-modulelist/43940/7
-    for details
-
-    The last dimension of the output corresponds to the MLP index.
-    """
+    
     def __init__(
             self,
             num_heads,

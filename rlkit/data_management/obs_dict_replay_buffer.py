@@ -5,21 +5,7 @@ from rlkit.data_management.replay_buffer import ReplayBuffer
 
 
 class ObsDictRelabelingBuffer(ReplayBuffer):
-    """
-    Replay buffer for environments whose observations are dictionaries, such as
-        - OpenAI Gym GoalEnv environments.
-          https://blog.openai.com/ingredients-for-robotics-research/
-        - multiworld MultitaskEnv. https://github.com/vitchyr/multiworld/
-
-    Implementation details:
-     - Only add_path is implemented.
-     - Image observations are presumed to start with the 'image_' prefix
-     - Every sample from [0, self._size] will be valid.
-     - Observation and next observation are saved separately. It's a memory
-       inefficient to save the observations twice, but it makes the code
-       *much* easier since you no longer have to worry about termination
-       conditions.
-    """
+    
 
     def __init__(
             self,
@@ -205,7 +191,7 @@ class ObsDictRelabelingBuffer(ReplayBuffer):
                 len(self._idx_to_future_obs_idx[i]) for i in future_indices
             ])
             # Faster than a naive for-loop.
-            # See https://github.com/vitchyr/rlkit/pull/112 for details.
+            
             next_obs_idxs = (
                 np.random.random(num_future_goals) * possible_future_obs_lens
             ).astype(np.int)
@@ -231,12 +217,7 @@ class ObsDictRelabelingBuffer(ReplayBuffer):
         resampled_goals = new_next_obs_dict[self.desired_goal_key]
 
         new_actions = self._actions[indices]
-        """
-        For example, the environments in this repo have batch-wise
-        implementations of computing rewards:
-
-        https://github.com/vitchyr/multiworld
-        """
+        
 
         if hasattr(self.env, 'compute_rewards'):
             new_rewards = self.env.compute_rewards(

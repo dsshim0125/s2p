@@ -10,11 +10,6 @@ from rlkit.torch.slac.utils import create_feature_actions, grad_false, soft_upda
 
 
 class SlacAlgorithm:
-    """
-    Stochactic Latent Actor-Critic(SLAC).
-
-    Paper: https://arxiv.org/abs/1907.00953
-    """
 
     def __init__(
         self,

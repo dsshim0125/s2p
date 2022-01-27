@@ -3,7 +3,7 @@ import numpy as np
 from rlkit.envs.pearl_envs.ant_multitask_base import MultitaskAntEnv
 
 
-# Copy task structure from https://github.com/jonasrothfuss/ProMP/blob/master/meta_policy_search/envs/mujoco_envs/ant_rand_goal.py
+
 class AntGoalEnv(MultitaskAntEnv):
     def __init__(self, task={}, n_tasks=2, randomize_tasks=True, **kwargs):
         self.quick_init(locals())

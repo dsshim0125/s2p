@@ -1,8 +1,4 @@
-"""
-Based on rllab's logger.
 
-https://github.com/rll/rllab
-"""
 from enum import Enum
 from contextlib import contextmanager
 import numpy as np
