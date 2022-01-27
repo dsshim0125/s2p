@@ -22,3 +22,8 @@ python evaluate.py --env_type=cheetah --netG=s2p_light --dataroot=./datasets/che
 ```shell
 python train.py --env_type=cheetah --netG=s2p --dataroot=./datasets/cheetah.hdf5 --batchSize=16
 ```
+
+### Reference
+1. https://github.com/NVlabs/SPADE
+2. https://github.com/yenchenlin/nerf-pytorch
+3. https://github.com/huangzh13/StyleGAN.pytorch
