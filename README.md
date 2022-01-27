@@ -39,7 +39,8 @@ pip install git+https://github.com/deepmind/dm_control
 
 
 
-Due to the memory limit in the submission of supplementary materials, we cannot provide full offline dataset used for the paper. Instead, we provide tiny dataset of the cheetah-run-mixed environment with the state transition rollout by the random policy in /rl_data in the attached link. Download the cheetah-run-mixed_first_500k folder and paste it in to data/trajwise folder.
+Due to the memory limit in the submission of supplementary materials, we cannot provide full offline dataset used for the paper. Instead, we provide tiny dataset of the cheetah-run-mixed environment with the state transition rollout by the random policy in https://drive.google.com/drive/folders/15WzMg_OAN9PBHFNw8iTRcBvnjsqK9TsZ?usp=sharing. Download the cheetah-run-mixed_first_500k folder and paste it in to data/trajwise folder of this repository.
+
 If you want to follow the generating process of the state transition rollout by the random policy, you should run the below code after download the cheetah-run-mixed_first_500k folder.
 
 ### state transition data rollout
