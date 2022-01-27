@@ -14,13 +14,13 @@ Our experiments have been done with PyTorch 1.10.1, CUDA 11.4, Python 3.8.5 and 
 ### Simple Generation
 
 ```shell
-python evaluate.py --env_type=cheetah --netG=s2p_light --dataroot=./datasets/cheetah.hdf5 --start_idx=0 --seq_len=5
+python evaluate.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p_light --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
 
 ### Train S2P
 
 ```shell
-python train.py --env_type=cheetah --netG=s2p --dataroot=./datasets/cheetah.hdf5 --batchSize=16
+python train.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --batchSize=16 --gpu_ids=0
 ```
 
 ### Reference
