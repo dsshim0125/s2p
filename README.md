@@ -14,14 +14,16 @@ We use  a single NVIDIA RTX A6000 for training, but you can still run our code w
 A simpel visualziation of the generation results can be done by GPUs with 4GB of memory use.
 
 ### Simple Generation
-We provide pre-trained models of S2P and some tiny dataset for simple evaluation.
+We provide pre-trained models of S2P and some tiny dataset for simple visualization of S2P.
+Reviewers can easily visualize N-step generation results with ```--seq_len``` flag in 2 different environments (cheetah, walker).
 
 | Env_type  |  model  |
 |----------|:--:|
 |cheetah|[cheetah_30.pth](https://drive.google.com/file/d/1Q3fGEIT99BeeLNokkNAwmWv7r5L9Z7LK/view?usp=sharing)|
 |walker|[walker_30.pth](https://drive.google.com/file/d/1NKfoIcTJapEzor5VEISnewNi-7_8N5QO/view?usp=sharing)|
 
-Create a folder ```./checkpoints``` and download the model weights into it. Here are model weights of S2P trained on cheetah and walker environment of DeepMind Controp Suite.
+Create a folder ```./checkpoints``` and download the model weights into it. 
+Here are model weights of S2P trained on cheetah and walker environment of DeepMind Controp Suite.
 ```shell
 python simple_test.py --env_type=cheetah --dataroot=./datasets --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
