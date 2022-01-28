@@ -15,6 +15,7 @@ A simpel visualziation of the generation results can be done by GPUs with 4GB of
 
 ## Download pre-trained models
 
+We provide pre-trained weights of S2P in some environments for simple test of the generation performance.
 Create a folder ```./checkpoints``` and download the model weights into it. 
 Here are model weights of S2P trained on cheetah and walker environment of DeepMind Controp Suite.
 
