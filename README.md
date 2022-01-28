@@ -12,7 +12,7 @@ pip install -r requirements.txt
 Our experiments have been done with PyTorch 1.10.1, CUDA 11.4, Python 3.8.5 and Ubuntu 18.04. We use  a single NVIDIA RTX A6000 for training, but you can still run our code with GPUs which have smaller memory by reducing the batchSize. A simpel visualziation of the generation results can be done by GPUs with 4GB of memory use.
 
 ### Simple Generation
-Due to the meomory limit in the submission of supplementary materials, we cannot provide pre-trained weights of our S2P architecture. Instead, we provide the pre-trained weights of S2P_light which is lighter version of S2P in two different tasks, cheetah and walker.
+Create a folder ```./checkpoints``` and Due to the meomory limit in the submission of supplementary materials, we cannot provide pre-trained weights of our S2P architecture. Instead, we provide the pre-trained weights of S2P_light which is lighter version of S2P in two different tasks, cheetah and walker.
 
 After the camera-ready submission, we will publicly open the source code and the pre-trained weights of our full S2P in 6 different tasks we've shown in the paper.
 ```shell
