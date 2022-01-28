@@ -23,7 +23,7 @@ We provide pre-trained models of S2P and some tiny dataset for simple evaluation
 
 Create a folder ```./checkpoints``` and download the model weights into it.
 ```shell
-python evaluate.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p_light --start_idx=0 --seq_len=5 --gpu_ids=0
+python evaluate.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
 
 ### Train S2P
