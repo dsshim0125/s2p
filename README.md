@@ -5,7 +5,7 @@
 ## Setup
 ```shell
 conda create -n s2p python=3.8.5
-conda activate ht_dcmnet
+conda activate s2p
 conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
 pip install -r requirements.txt
 ```
