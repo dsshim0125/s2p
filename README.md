@@ -17,7 +17,7 @@ A simpel visualziation of the generation results can be done by GPUs with 4GB of
 We provide pre-trained models of S2P and some tiny dataset for simple evaluation.
 
 | Env_type  |  model  |
-|----------|:--:|:--:|
+|----------|:--:|
 |cheetah|[cheetah_30.pth](https://drive.google.com/file/d/1Q3fGEIT99BeeLNokkNAwmWv7r5L9Z7LK/view?usp=sharing)|
 |walker|[walker_30.pth](https://drive.google.com/file/d/1NKfoIcTJapEzor5VEISnewNi-7_8N5QO/view?usp=sharing)|
 
