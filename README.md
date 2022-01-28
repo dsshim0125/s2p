@@ -2,7 +2,7 @@
 
 ## ICML 2022 submission
 
-### Setup
+## Setup
 ```shell
 conda create -n s2p python=3.8.5
 conda activate ht_dcmnet
