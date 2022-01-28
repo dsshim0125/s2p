@@ -33,7 +33,7 @@ Reviewers can easily visualize N-step generation results with ```--seq_len```.
 python simple_test.py --env_type=cheetah --dataroot=./datasets --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
 
-
+<!-- 
 ## Offline RL setup
 ```shell
 pip install mujoco-py<2.2,>=2.1
@@ -67,7 +67,7 @@ For training offline RL, run the below python code.
 ```shell
 bash run_iql_image.sh
 bash run_cql_image.sh
-```
+``` -->
 
 ### Reference
 1. https://github.com/NVlabs/SPADE
