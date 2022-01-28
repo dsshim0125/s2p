@@ -23,19 +23,8 @@ We provide pre-trained models of S2P and some tiny dataset for simple evaluation
 
 Create a folder ```./checkpoints``` and download the model weights into it. Here are model weights of S2P trained on cheetah and walker environment of DeepMind Controp Suite.
 ```shell
-python evaluate.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
+python simple_test.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
 ```
-
-### Train S2P
-
-```shell
-python train.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --batchSize=16 --gpu_ids=0
-```
-
-### Reference
-1. https://github.com/NVlabs/SPADE
-2. https://github.com/yenchenlin/nerf-pytorch
-3. https://github.com/huangzh13/StyleGAN.pytorch
 
 
 ### Offline RL setup
@@ -57,6 +46,12 @@ python state_transition_rollout.py
 ```
 Then, you should run generation code... (TODO:DSSHIM)
 
+### Train S2P
+
+```shell
+python train.py --dataroot=./datasets/cheetah.hdf5 --env_type=cheetah --netG=s2p --batchSize=16 --gpu_ids=0
+```
+
 
 Then you can get the all_state_1step_random_action_dataset_naive.hdf5 in data/trajwise/cheetah-run-mixed_first_500k/all_state_1step_random_action folder.
 
@@ -67,6 +62,10 @@ bash run_iql_image.sh
 bash run_cql_image.sh
 ```
 
+### Reference
+1. https://github.com/NVlabs/SPADE
+2. https://github.com/yenchenlin/nerf-pytorch
+3. https://github.com/huangzh13/StyleGAN.pytorch
 
 
 
