@@ -27,7 +27,7 @@ Here are model weights of S2P trained on cheetah and walker environment of DeepM
 ## Simple generation
 
 We provide pre-trained models of S2P and some tiny dataset for simple visualization of S2P.
-Reviewers can easily visualize N-step generation results with ```--seq_len``` flag in 2 different environments (cheetah, walker).
+Reviewers can easily visualize N-step generation results with ```--seq_len```.
 
 ```shell
 python simple_test.py --env_type=cheetah --dataroot=./datasets --netG=s2p --start_idx=0 --seq_len=5 --gpu_ids=0
