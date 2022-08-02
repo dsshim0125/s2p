@@ -36,7 +36,9 @@ It is because a simple augmentation strategy is just image manipulation rather t
 
 ## Q3: S2P is not needed with random policy?
 Pardon. We are sorry that we cannot fully understand your question. To clarify your intention, we provide two different answers. If both answers are not satisfactory, please let us know. 
+
 Q3.1: If your comment means that the S2P is some kind of policy or RL algorithm, so you refer to the “S2P can be not needed”, Please check the general comments above first.
+
 Q3.2:  If your intention was “We do not need S2P because we can improve performance with random policy”, S2P is needed anyway to leverage random or perturbed policy in image RL by synthesizing images from the randomly visited state.
 
 
@@ -139,19 +141,27 @@ We appreciate all your efforts during the review process. We believe to have add
 We respectfully disagree. As we mentioned in the manuscript (59-61, 87-91), our proposed MAT fuses multi-modal signals in estimating the modulation parameters in Adaptive Instance Normalization (AdaIN) whereas previous methods (SPADE [1], ManiGAN [2]) only utilizes a single domain signal (semantic map, reference image) for style/domain transfer.
 
 Modalities in style transfer module (AdaIN)
+
 SPADE input: random variable z, modulation: semantic map
+
 ManiGAN input: text, modulation: image
+
 S2P input: state and image, modulation: state and image
 
 If there exists other prior literature that also deals with multi-modal input and modulation, would you mind referring to them? We will be glad to discuss the difference between S2P.
-
 
 [1] Li B, Qi X, Lukasiewicz T, et al. Manigan: Text-guided image manipulation[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020: 7880-7889.
 
 [2] Park T, Liu M Y, Wang T C, et al. Semantic image synthesis with spatially-adaptive normalization[C]//Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2019: 2337-2346.
 
 ## Q2 : Why is high-quality and accurate synthesis image generation important than data generation in latent space?
-The Dreamer exactly does the data generation in latent space by deploying the latent dynamics. However, the ELBO-based method such as Dreamer only can encode the seen images, which means the latent feature involves the information of the seen images. That is, if we explore the latent space, different from S2P (state space), the visited novel latent feature is not guaranteed to represent the novel state(image) in the original domain. Therefore, it is important to distill as much information as possible to the image encoder of the policy, and critic networks by producing diverse image data distribution. Furthermore, as mentioned in our work, Dreamer cannot reconstruct accurate images due to the absence of learning signals from multi-modal inputs, while our S2P can generate images that capture accurate state information of the agent. And we experimentally show the results in Table 3 and Figure 4 in our work, and Table 10 in the appendix. Due to the aforementioned reasons, our S2P achieves much better performance increases compared to the Dreamer.
+The Dreamer exactly does the data generation in latent space by deploying the latent dynamics. However, the ELBO-based method such as Dreamer only can encode the seen images, which means the latent feature involves the information of the seen images. That is, if we explore the latent space, different from S2P (state space), the visited novel latent feature is not guaranteed to represent the novel state(image) in the original domain. Therefore, it is important to distill as much information as possible to the image encoder of the policy, and critic networks by producing diverse image data distribution despite causing an additional learning process to encode the synthesized images. 
+
+Furthermore, the advantages of our S2P could be further validated by the generalization test in Section 4.5 for answering the image generation quality at the newly visited states by the learned state dynamics model. For example, the running walker's images could be augmented even though we only have the state transition data and only a single image at t = 0. The Dreamer-like method that generates in latent space cannot adapt to this new task because it has not ever seen the running walker's images. 
+
+Also, we could further consider extending the Dreamer with state inputs, as requested by another reviewer (Please refer to the answer of Q3 for the reviewer "bQSP" if you are interested in). But it also has difficulty in reflecting the state information into image generation due to the lack of architectural design for multi-modal inputs.
+
+And we experimentally show the results in Table 3 and Figure 4 in our work, and Table 10 in the appendix. Due to the aforementioned reasons, our S2P achieves much better performance increases compared to the Dreamer that generates the data in latent space.
 
 
 ## Q3 : Offline RL performance with SAT vs MAT
@@ -162,7 +172,7 @@ https://drive.google.com/file/d/1T5xV62voEdUM221JzI9Zz-SoF6W8X5DO/view?usp=shari
 As mentioned in Figure 5, misalignment of the checkerboard affects the recognition of the agent’s dynamics and it results in performance degradation.
 
 ## Q4. Performance comparison with COMBO, ROMI
-The referred paper utilizes forward or reverse dynamics for data generation. However, ROMI does not extend the idea into the image domain, and COMBO experimented in the image domain, which uses a latent dynamics model based on ELBO. As far as we know, augmenting the image transition data at COMBO is performed by generating the future image from latent space, and it would still have similar problems observed in Dreamer, because they do not consider the multi-modal inputs (Answered in Q2). The walker environment is also experimented with in COMBO, and it results in a 57.7~76.4 score (Table 2 in COMBO), while our S2P achieves almost expert level (70.95~97.97) score along all baselines. 
+The referred paper utilizes forward or reverse dynamics for data generation. However, ROMI does not extend the idea into the image domain, and COMBO experimented in the image domain, which uses a latent dynamics model based on ELBO. As far as we know, augmenting the image transition data at COMBO is performed by generating the future image from latent space, and it would still have similar problems observed in Dreamer, because they do not consider the multi-modal inputs (Answered in Q2). The walker environment is also experimented with in COMBO, and it results in a 57.7-76.4 score (Table 2 in COMBO), while our S2P achieves almost expert level (70.95-97.97) score along all baselines. 
 
 
 
@@ -180,7 +190,7 @@ We do not use the VGG model for RL tasks, but use them for utilizing perceptual 
 S2P is not an RL algorithm, rather it is an image synthesis model. Additional training images for offline RL are generated from S2P and any image-based offline RL algorithms can take advantage of S2P. During all the experiments, we use the same baseline architecture which means that the encoders are all the same across the offline RL algorithms (IQL, CQL, SLAC-off). Therefore, it is a fair evaluation when we compare offline RL results.
 
 ## Q8. Why introducing more generated image data cannot bring distinct performance improvement as shown in Table 1? 
-Pardon. If your question means that the score in baseline +S2P (right column of each baseline offline RL algorithm in Table 1) and scores in parenthesis are not that distinct, and you understand that the scores in parenthesis are obtained by augmenting more S2P outputs, we are sorry for misleading your understanding. 
+Pardon. If your question means that the scores in baseline +S2P (right column of each baseline offline RL algorithm in Table 1) and scores in parenthesis are not that distinct, and you understand that the scores in parenthesis are obtained by augmenting more S2P outputs, we are sorry for misleading your understanding. 
 
 Specifically, the left column of each baseline(ex: IQL, CQL, SLAC-off) in Table 1 is the trained results with the 50k dataset, and the right column (ex: IQL+S2P, CQL+S2P, SLAC-off+S2P) is the trained results with the original 50k + generated 50k dataset by S2P (totally 100k). And, as we mentioned in our work, the scores in the parenthesis are the trained results with the 100k ground truth dataset (it does not contain generated data by S2P, and is just additionally collected for reference to match the same amount). The data augmentation techniques’ contribution is that we can get the comparable or even better performance amount of the 100k dataset despite only having the smaller size dataset (50k in this case). Thus, it could be considered fair when we address the data augmentation problems.
 
