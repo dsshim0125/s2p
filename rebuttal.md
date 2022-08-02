@@ -5,7 +5,7 @@ We sincerely thank all the reviewers for providing constructive comments.
 1. We provide a correction for common misunderstandings of the reviewers to clarify our methodology.
 **S2P itself is not an RL algorithm.** Rather, it is an image synthesis algorithm for data augmentation. S2P only generates images from states in the extended distribution and the previous image. The synthesized image outputs can be used as additional data during training for any image-based offline RL algorithms.
 
-2. If you don’t mind, please check the Appendix in the supplementary files. Most of the answers are already provided in it.
+2. We politely ask if the reviewers could check the Appendix in the supplementary files. Most of the answers are already provided in it.
 
 3. We have uploaded a new version of the manuscript based on reviewers’ comments and minor corrections.
 
@@ -37,9 +37,11 @@ It is because a simple augmentation strategy is just image manipulation rather t
 ## Q3: S2P is not needed with random policy?
 Pardon. We are sorry that we cannot fully understand your question. To clarify your intention, we provide two different answers. If both answers are not satisfactory, please let us know. 
 
-Q3.1: If your comment means that the S2P is some kind of policy or RL algorithm, so you refer to the “S2P can be not needed”, Please check the general comments above first.
+Q3.1: First of all, please not that S2P is not some kind of RL algorithm, as mentioned in the General Comments \#1 above.
 
-Q3.2:  If your intention was “We do not need S2P because we can improve performance with random policy”, S2P is needed anyway to leverage random or perturbed policy in image RL by synthesizing images from the randomly visited state.
+Q3.2:  If you meant "S2P is not necessary because we can improve the performance with random policy", then S2P is still needed to exploit random or permuted policy to the image RL by synthesizing images from the randomly visited state.
+
+If we misunderstood your question, please rephrase it or let us know.
 
 
 ## Q4. How much data do you need to train S2P model?  
