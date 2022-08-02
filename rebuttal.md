@@ -56,7 +56,7 @@ We appreciate all your efforts during the review process. We believe to have add
 
 
 ## Q1. Explicitly mention limitation 
-We admit that training S2P requires an assumption that state and its paired images are needed, so we create a new section “limitation” and mention it explicitly. Please check the newly uploaded manuscript (340-343).
+We admit that training S2P requires an assumption that state and its paired images are needed, so we explicitly mention it in the manuscript. Please check the newly uploaded manuscript (340-343).
 
 ## Q2. Image to state (P2S) vs state to image (S2P)
 Thank you for your interesting idea, and we additionally experiment with the image-to-state model (P2S) compared to S2P.
