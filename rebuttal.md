@@ -103,7 +103,7 @@ First of all, we would like to make clear that we did not use any additional gro
 Specifically, the left column of each baseline(ex: IQL, CQL, SLAC-off) in Table 1 is the trained results with the 50k dataset, and the right column (ex: IQL+S2P, CQL+S2P, SLAC-off+S2P) is the trained results with the original 50k + generated 50k dataset by S2P (totally 100k). And, as we mentioned in our work, the scores in the parenthesis are the trained results with the 100k ground truth dataset (it does not contain generated data by S2P, and is just additionally collected for reference to match the same amount). We validate through this experiment that RL agents trained with augmented data (ground truth 50k + S2P 50k) produces the comparable or even better performance compared to data which has the same transition number from ground truth (ground truth 100k).
 
 
-Therefore, we think fixing the entire transition of the data is not a proper experiment setting for evaluating the performance according to the ratio of ground truth and synthesized frames.
+Therefore, we think fixing the number of entire transition data is not a proper experiment setting for evaluating the performance according to the ratio of ground truth and synthesized frames.
 Rather, we fix the number of the ground truth and change the number of the synthesized images to figure out how much additional data effects the RL performance.
 The results are shown in the following table.
 <!--We also additionally experimented with the mixing ratios of the datasets. The results are shown in the following Table.-->
