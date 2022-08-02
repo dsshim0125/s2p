@@ -147,11 +147,11 @@ We respectfully disagree. As we mentioned in the manuscript (59-61, 87-91), our 
 
 Modalities in style transfer module (AdaIN)
 
-SPADE input: random variable z, modulation: semantic map
+**SPADE** [1] input: random variable z, modulation: semantic map
 
-ManiGAN input: text, modulation: image
+**ManiGAN** [2] input: text, modulation: image
 
-S2P input: state and image, modulation: state and image
+**S2P** input: state and image, modulation: state and image
 
 If there exists other prior literature that also deals with multi-modal input and modulation, we would appreciate it if you could mention it. We will be glad to discuss the difference from S2P.
 
