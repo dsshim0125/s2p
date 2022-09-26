@@ -1,6 +1,6 @@
 # S2P: State-conditioned Image Synthesis for Data Augmentation in Offline Reinforcement Learning
 
-## ICML 2022 submission
+This repo provides an official PyTorch implementation of "S2P: State-conditioned Image Synthesis for Data Augmentation in Offline Reinforcement Learning" (NeurIPS 2022).
 
 ## Setup
 ```shell
